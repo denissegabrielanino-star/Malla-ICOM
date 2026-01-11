@@ -1,0 +1,140 @@
+:root {
+    --bg-color: #f4f7f9;
+    --text-main: #2d3436;
+    --border-color: #dcdde1;
+    
+    /* Colores por Categoría */
+    --color-disc: #0984e3; /* Azul fuerte */
+    --color-prof: #2f3640; /* Gris oscuro/Azul noche */
+    --color-iden: #74b9ff; /* Azul claro */
+    --color-gest: #718093; /* Gris medio */
+    
+    --color-approved: #a29bfe;
+    --color-locked: #dfe6e9;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 600;
+}
+
+.disc { background-color: var(--color-disc); }
+.prof { background-color: var(--color-prof); }
+.iden { background-color: var(--color-iden); }
+.gest { background-color: var(--color-gest); }
+
+/* Grid Layout */
+.malla-container {
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.malla-grid {
+    display: grid;
+    /* 10 columnas para los semestres */
+    grid-template-columns: repeat(10, minmax(160px, 1fr));
+    gap: 15px;
+    min-width: 1600px; /* Asegura que no se colapse en pantallas chicas */
+}
+
+/* Semestre Header */
+.semestre-header {
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+    background: #fff;
+    border-bottom: 3px solid var(--color-disc);
+    margin-bottom: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Tarjeta de Ramo */
+.ramo {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 5px solid transparent;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+    user-select: none;
+}
+
+.ramo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Colores por tipo */
+.ramo.disciplinaria { border-left-color: var(--color-disc); color: var(--color-disc); }
+.ramo.profesional { border-left-color: var(--color-prof); color: var(--color-prof); }
+.ramo.identidad { border-left-color: var(--color-iden); color: var(--color-iden); }
+.ramo.gestion { border-left-color: var(--color-gest); color: var(--color-gest); }
+
+/* Estados */
+.ramo.approved {
+    background-color: #d1d8e0;
+    text-decoration: line-through;
+    color: #7f8c8d !important;
+    border-left-color: #95a5a6;
+    opacity: 0.7;
+}
+
+.ramo.locked {
+    background-color: var(--color-locked);
+    color: #b2bec3 !important;
+    cursor: not-allowed;
+    border-left-color: #b2bec3;
+}
+
+/* Notificación */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff7675;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
