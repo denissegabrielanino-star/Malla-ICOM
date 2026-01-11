@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Mi Progreso Académico</h1>
+        <p>Haz clic en un ramo para marcarlo como aprobado. Los ramos bloqueados mostrarán sus requisitos.</p>
+        <div class="legend">
+            <span class="tag disc">Formación Disciplinaria</span>
+            <span class="tag prof">Formación Profesional</span>
+            <span class="tag iden">Formación e Identidad</span>
+            <span class="tag gest">Gestión y Empleabilidad</span>
+        </div>
+    </header>
+
+    <main class="malla-container">
+        <div id="malla-grid" class="malla-grid">
+            </div>
+    </main>
+
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
